@@ -1,0 +1,33 @@
+{
+    "name": "rocit-tech/iterable-functions-polyfill",
+    "description": "Add array_*, implode, explode, ... capabilities to iterable / traversable / ...",
+    "keywords": ["iterable", "iterator", "array_"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrien Roches",
+            "email": "adrien@roc-it.tech"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RocIT\\": "src"
+        },
+        "files": [
+            "src/iterable-map.php",
+            "src/iterable-filter.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RocIT\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
