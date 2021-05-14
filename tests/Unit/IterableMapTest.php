@@ -60,6 +60,18 @@ final class IterableMapTest extends TestCase
         $resultArray = iterator_to_array($resultIterator);
 
         self::assertEquals($expectedResult, $resultArray);
+    }
+
+    /**
+     * @covers       map
+     * @dataProvider dataWithoutCallback
+     */
+    public function testSameAsNativeWithoutCallback(callable $iteratorsFactory, array $expectedResult): void
+    {
+        $iterators      = $iteratorsFactory();
+        $resultIterator = map(null, ...$iterators);
+
+        $resultArray = iterator_to_array($resultIterator);
 
         $iterators         = $iteratorsFactory();
         $iteratorsAsArrays = array_map(static function ($iterator): array {
@@ -126,6 +138,18 @@ final class IterableMapTest extends TestCase
         $resultArray = iterator_to_array($resultIterator);
 
         self::assertEquals($expectedResult, $resultArray);
+    }
+
+    /**
+     * @covers       map
+     * @dataProvider dataWithCallback
+     */
+    public function testSameAsNativeWithCallback(callable $iteratorsFactory, ?callable $callback, array $expectedResult): void
+    {
+        $iterators      = $iteratorsFactory();
+        $resultIterator = map($callback, ...$iterators);
+
+        $resultArray = iterator_to_array($resultIterator);
 
         $iterators         = $iteratorsFactory();
         $iteratorsAsArrays = array_map(static function ($iterator): array {
