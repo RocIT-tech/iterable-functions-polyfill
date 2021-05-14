@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RocIT\Tests;
+namespace RocIT\Tests\Unit;
 
 use Generator;
 use Traversable;

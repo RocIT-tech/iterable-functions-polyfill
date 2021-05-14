@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RocIT\Tests;
+namespace RocIT\Tests\Unit;
 
 use Generator;
 use PHPUnit\Framework\TestCase;
@@ -78,6 +78,22 @@ final class IterableFilterTest extends TestCase
         $resultArray = iterator_to_array($resultIterator);
 
         self::assertEquals($expectedResult, $resultArray);
+    }
+
+    /**
+     * @covers       filter
+     *
+     * @dataProvider dataWithoutCallback
+     */
+    public function testSameAsNativeWithoutCallback(callable $iteratorFactory, array $expectedResult, ?int $mode): void
+    {
+        $iterator       = $iteratorFactory();
+        $resultIterator = filter(
+            $iterator,
+            mode: $mode ?: 0
+        );
+
+        $resultArray = iterator_to_array($resultIterator);
 
         $iterator = $iteratorFactory();
         self::assertEquals(
@@ -169,6 +185,23 @@ final class IterableFilterTest extends TestCase
         $resultArray = iterator_to_array($resultIterator);
 
         self::assertEquals($expectedResult, $resultArray);
+    }
+
+    /**
+     * @covers       filter
+     *
+     * @dataProvider dataWithCallback
+     */
+    public function testSameAsNativeWithCallback(callable $iteratorFactory, ?callable $callback, array $expectedResult, ?int $mode): void
+    {
+        $iterator       = $iteratorFactory();
+        $resultIterator = filter(
+            $iterator,
+            callback: $callback,
+            mode: $mode ?: 0
+        );
+
+        $resultArray = iterator_to_array($resultIterator);
 
         $iterator = $iteratorFactory();
         self::assertEquals(

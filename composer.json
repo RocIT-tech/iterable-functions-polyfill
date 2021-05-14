@@ -15,8 +15,8 @@
             "RocIT\\": "src"
         },
         "files": [
-            "src/iterable-map.php",
-            "src/iterable-filter.php"
+            "src/iterable-filter.php",
+            "src/iterable-map.php"
         ]
     },
     "autoload-dev": {
