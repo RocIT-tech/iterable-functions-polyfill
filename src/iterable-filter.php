@@ -12,7 +12,7 @@ function filter(iterable $iterable, ?callable $callback = null, int $mode = 0): 
 {
     if ($callback === null) {
         $callback = static function ($value): bool {
-            return !empty($value);
+            return empty($value) === false;
         };
     }
 

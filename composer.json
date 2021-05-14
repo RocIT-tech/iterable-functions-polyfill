@@ -16,7 +16,8 @@
         },
         "files": [
             "src/iterable-filter.php",
-            "src/iterable-map.php"
+            "src/iterable-map.php",
+            "src/iterable-reduce.php"
         ]
     },
     "autoload-dev": {

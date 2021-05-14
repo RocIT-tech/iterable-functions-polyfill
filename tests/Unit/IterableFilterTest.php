@@ -60,7 +60,7 @@ final class IterableFilterTest extends TestCase
     }
 
     /**
-     * @covers       filter
+     * @covers       ::filter
      *
      * @dataProvider dataWithoutCallback
      */
@@ -81,7 +81,7 @@ final class IterableFilterTest extends TestCase
     }
 
     /**
-     * @covers       filter
+     * @covers       ::filter
      *
      * @dataProvider dataWithoutCallback
      */
@@ -166,7 +166,7 @@ final class IterableFilterTest extends TestCase
     }
 
     /**
-     * @covers       filter
+     * @covers       ::filter
      *
      * @dataProvider dataWithCallback
      */
@@ -188,7 +188,7 @@ final class IterableFilterTest extends TestCase
     }
 
     /**
-     * @covers       filter
+     * @covers       ::filter
      *
      * @dataProvider dataWithCallback
      */

@@ -46,7 +46,7 @@ final class IterableMapTest extends TestCase
     }
 
     /**
-     * @covers       map
+     * @covers       ::map
      * @dataProvider dataWithoutCallback
      */
     public function testSuccessfulWithoutCallback(callable $iteratorsFactory, array $expectedResult): void
@@ -63,7 +63,7 @@ final class IterableMapTest extends TestCase
     }
 
     /**
-     * @covers       map
+     * @covers       ::map
      * @dataProvider dataWithoutCallback
      */
     public function testSameAsNativeWithoutCallback(callable $iteratorsFactory, array $expectedResult): void
@@ -124,7 +124,7 @@ final class IterableMapTest extends TestCase
     }
 
     /**
-     * @covers       map
+     * @covers       ::map
      * @dataProvider dataWithCallback
      */
     public function testSuccessfulWithCallback(callable $iteratorsFactory, ?callable $callback, array $expectedResult): void
@@ -141,7 +141,7 @@ final class IterableMapTest extends TestCase
     }
 
     /**
-     * @covers       map
+     * @covers       ::map
      * @dataProvider dataWithCallback
      */
     public function testSameAsNativeWithCallback(callable $iteratorsFactory, ?callable $callback, array $expectedResult): void
