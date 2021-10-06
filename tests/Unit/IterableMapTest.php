@@ -90,7 +90,7 @@ final class IterableMapTest extends TestCase
     public function dataWithCallback(): Generator
     {
         $callback = static function (string ...$values): string {
-            return sprintf('[%s]', implode(', ', $values));
+            return sprintf('[%s]', implode($values, ', '));
         };
 
         yield 'Simple array' => [
